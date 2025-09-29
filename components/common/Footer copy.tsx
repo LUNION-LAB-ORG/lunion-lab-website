@@ -5,9 +5,9 @@ import Link from "next/link";
 
 export default function LunionLabFooter() {
   return (
-    <div>
+    <footer className="-mt-8">
       <div>
-        <div className="-mb-1 relative">
+        <div className="-mb-2  relative">
           <Image
             src={"/assets/images/all-img/form.svg"}
             className="w-full h-full"
@@ -17,7 +17,7 @@ export default function LunionLabFooter() {
           />
         </div>
       </div>
-      <footer className="bg-[#0b0b0b] font-figree text-white relative overflow-hidden ">
+      <div className="bg-[#0b0b0b] font-figree text-white relative overflow-hidden ">
         {/* Background geometric pattern */}
 
         <div className="relative z-10 max-w-7xl mx-auto px-8 py-10">
@@ -133,7 +133,7 @@ export default function LunionLabFooter() {
             </div>
           </div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   );
 }

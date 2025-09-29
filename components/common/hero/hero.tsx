@@ -14,7 +14,7 @@ export default function Hero() {
 
   return (
     <section className="relative w-full">
-      <div className="relative w-full h-[60vh] md:h-[70vh] lg:h-[120vh] rounded-lg overflow-hidden">
+      <div className="relative w-full min-h-screen rounded-lg overflow-hidden">
         <Image
           src="/assets/images/all-img/fond.png"
           alt="Hero"
@@ -24,7 +24,7 @@ export default function Hero() {
         />
 
         {/* Texte overlay */}
-        <div className="absolute top-1/4 sm:top-1/3 left-4 sm:left-8 md:left-20 max-w-[90%] sm:max-w-md md:max-w-lg backdrop-blur-md bg-black/20 text-white p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl">
+        <div className="absolute top-1/4 sm:top-1/3 left-4 sm:left-8 md:left-20 max-w-[90%] sm:max-w-md md:max-w-lg lg:max-w-3xl xl:max-w-4xl backdrop-blur-md bg-black/20 text-white p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl">
           <h1 className="text-lg sm:text-2xl md:text-4xl font-bold leading-snug">
             Une grande technologie <br />
             repose toujours sur des <br />
@@ -51,7 +51,7 @@ export default function Hero() {
             priority
           />
         </div>
-        <div className="hidden lg:block absolute h-12 left-[39%] top-[54%] w-28">
+        <div className="hidden lg:block absolute h-12 left-[39%] top-[54%] w-32">
           <Image
             src="/assets/images/cursors/cursor3.png"
             alt="Hero"
@@ -60,7 +60,7 @@ export default function Hero() {
             priority
           />
         </div>
-        <div className="hidden lg:block absolute z-20 h-8 right-[25%] bottom-[8%] w-56">
+        <div className="hidden lg:block absolute z-20 h-10 right-[25%] bottom-[8%] w-72">
           <Image
             src="/assets/images/cursors/cursor4.png"
             alt="Hero"

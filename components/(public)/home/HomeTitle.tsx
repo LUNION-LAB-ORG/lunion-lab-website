@@ -21,7 +21,7 @@ const HomeTitle: React.FC<GradientTextProps> = ({
       <div className="inline-flex items-center relative gap-2 font-bold mb-4">
         {/* Image (rendu seulement si imageSrc est défini ET non vide) */}
         {imageSrc ? (
-          <div className="w-12 h-12 z-10 -top-3 left-0 rounded-lg flex items-center absolute justify-center">
+          <div className="w-15 h-15 z-10 -top-3 left-0 rounded-lg flex items-center absolute justify-center">
             <Image
               src={imageSrc}
               alt="logo"

@@ -67,7 +67,7 @@ export default function WorkMethod() {
         </div>
 
         {/* Image centrale */}
-        <div className="relative flex justify-center items-center lg:col-span-1  h-64 sm:h-80 md:h-96 md:my-10 lg:h-full">
+        <div className="relative hidden lg:flex justify-center items-center lg:col-span-1  h-64 sm:h-80 md:h-96 md:my-10 lg:h-full">
           <Image
             src="/assets/images/all-img/img_methode.png"
             alt="Personne utilisant un téléphone"
