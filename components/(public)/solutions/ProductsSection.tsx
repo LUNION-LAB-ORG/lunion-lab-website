@@ -59,7 +59,7 @@ export default function ProductsSection() {
 
   return (
     <section className="bg-white py-20">
-      <div className="container mx-auto px-6 lg:px-12">
+      <div className="contaner mx-auto px-6 lg:px-12">
         {/* Titre de section */}
         <div className="flex   justify-center items-center gap-3 mb-12">
         

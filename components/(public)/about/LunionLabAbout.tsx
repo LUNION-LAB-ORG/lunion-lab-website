@@ -4,7 +4,7 @@ import HomeTitle from '../home/HomeTitle';
 
 const LunionLabAbout = () => {
   return (
-    <div className="max-w-7xl mx-auto p-8 bg-gray-50 min-h-screen">
+    <div className="max-w-7xl mx-auto p-8 bg-gray-50 min-h-scren">
       {/* Header with size indicator */}
      
 

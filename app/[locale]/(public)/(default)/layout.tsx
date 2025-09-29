@@ -4,6 +4,7 @@ import { Figtree, Geist, Geist_Mono } from "next/font/google";
 
 import LunionNav from "@/components/common/nav/LunionNav";
 import { Footer } from "@/components/common/footer";
+import LunionLabFooter from "@/components/common/Footer copy";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +37,7 @@ export default function DefaultLayout({
         <LunionNav />
         {/* Tout le contenu dynamique doit être Client Component */}
         {children}
-        <Footer />
+        <LunionLabFooter />
       </body>
     </html>
   );

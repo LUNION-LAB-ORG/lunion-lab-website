@@ -4,6 +4,7 @@ import { Navbar } from "@/components/common/navbar";
 
 import { Footer } from "@/components/common/footer";
 import Main from "@/components/primitives/Main";
+import LunionLabFooter from "@/components/common/Footer copy";
 
 export default async function PublicLayout({
   children,
@@ -14,6 +15,7 @@ export default async function PublicLayout({
     <body>
     
       {children}
+      
      
     </body>
   );
