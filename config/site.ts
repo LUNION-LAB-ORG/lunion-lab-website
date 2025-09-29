@@ -3,7 +3,7 @@ export type SiteConfig = typeof siteConfig;
 export const locales = ["ar", "en", "fr"];
 
 export const siteConfig = {
-  name: "Next-STARTER",
+  name: "Lunion-Lab",
   description: "Make beautiful websites regardless of your design experience.",
   navItems: [
     {

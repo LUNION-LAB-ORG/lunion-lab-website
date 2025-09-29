@@ -11,10 +11,10 @@ export default async function PublicLayout({
   children: React.ReactNode;
 }) {
   return (
-    <Main>
-      <Navbar />
+    <body>
+    
       {children}
-      <Footer />
-    </Main>
+     
+    </body>
   );
 }
