@@ -44,7 +44,7 @@ export default function ServicesSection() {
           />
         </div>
         <p className="mt-6 text-gray-300 max-w-2xl mx-auto">
-          Ces services permettent de répondre aux dés numériques actuels tout en
+          Ces services permettent de répondre aux défis numériques actuels tout en
           optimisant l&apos;impact social et économique des initiatives.
         </p>
       </div>

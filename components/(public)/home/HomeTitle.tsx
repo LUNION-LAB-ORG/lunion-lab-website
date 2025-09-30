@@ -34,7 +34,7 @@ const HomeTitle: React.FC<GradientTextProps> = ({
 
         {/* Texte */}
         {useGradient ? (
-          <div className="relative z-10 bg-clip-text bg-gradient-to-r from-purple-600 to-gray-900 text-transparent">
+          <div className="relative font-figtree z-10 bg-clip-text bg-gradient-to-r from-purple-600 to-gray-900 text-transparent">
             {text}
           </div>
         ) : (

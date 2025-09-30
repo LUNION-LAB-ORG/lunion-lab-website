@@ -1,12 +1,11 @@
 "use client";
 
-import React from "react";
-import { Button } from "../ui/button";
+import Link from "next/link";
 import HomeTitle from "../(public)/home/HomeTitle";
-import Section from "../primitives/Section";
-
+import { Button } from "../ui/button";
 
 const DownloadBrochure = () => {
+  const phoneNumber = "+2250565508686";
   return (
     <section className="w-full font-figtree flex flex-col items-center justify-center  py-16 px-6 bg-[#F3F4F5]">
       {/* Titre */}
@@ -37,7 +36,7 @@ const DownloadBrochure = () => {
           type="submit"
           className="p-6 rounded-2xl bg-primary text-white font-semibold shadow-lg hover:bg-purple-700 transition"
         >
-          Soumettre
+          <Link href={`https://wa.me/${phoneNumber}`}> Soummetre</Link>
         </Button>
       </form>
     </section>

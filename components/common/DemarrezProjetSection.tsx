@@ -1,11 +1,9 @@
-import Image from "next/image";
-import React from "react";
-import { Button } from "../ui/button";
+import Link from "next/link";
 import HomeTitle from "../(public)/home/HomeTitle";
-import Section from "../primitives/Section";
-
+import { Button } from "../ui/button";
 
 const DemarrezProjetSection = () => {
+   const phoneNumber = "+2250565508686";
   return (
     <section
       className="relative font-figtree lg:min-h-screen bg-gray-100 flex bg-cover  bg-center items-center justify-center   overflow-hidden px-4 sm:px-6 lg:px-8   "
@@ -39,11 +37,10 @@ const DemarrezProjetSection = () => {
                 "linear-gradient(90deg, rgba(112, 74, 154, 1) 0%, rgba(0, 0, 0, 0.7) 93%, rgba(0, 0, 0, 0.7) 100%)",
             }}
           >
-            
-                   <HomeTitle
-          text=" Démarrez votre nouveau projet."
-          imageSrc={"/assets/images/all-img/demarrage_icone.png"}
-        />
+            <HomeTitle
+              text=" Démarrez votre nouveau projet."
+              imageSrc={"/assets/images/all-img/demarrage_icone.png"}
+            />
           </span>
         </h1>
 
@@ -53,7 +50,8 @@ const DemarrezProjetSection = () => {
         </p>
 
         <Button className="bg-primary hover:bg-purple-700 text-white font-semibold px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg transition-colors duration-300 shadow-lg hover:shadow-xl">
-          Démarrer ici
+        
+           <Link href={`https://wa.me/${phoneNumber}`}>  Démarrer ici</Link>
         </Button>
       </div>
     </section>

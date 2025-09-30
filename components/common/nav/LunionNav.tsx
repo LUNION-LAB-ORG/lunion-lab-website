@@ -1,4 +1,6 @@
 "use client";
+import LocaleSwitcher from "@/components/locale-switch";
+import { ThemeSwitch } from "@/components/theme-switch";
 import { Button } from "@/components/ui/button";
 import { LayoutGrid } from "lucide-react";
 import Image from "next/image";
@@ -143,7 +145,7 @@ const LunionNav = () => {
               src={"/assets/images/all-img/logo.png"}
               width={150}
               height={150}
-              className="h-10 w-auto object-contain"
+              className="h-8 w-auto object-contain"
             />
           </button>
 
@@ -164,15 +166,17 @@ const LunionNav = () => {
             <Link href="/contact" className="hover:text-purple-600">
               Contact
             </Link>
+
+           
           </div>
 
           {/* Boutons à droite */}
           <div className="flex items-center gap-4">
             <Button
               className="
-                rounded-full bg-black hover:bg-purple-700 text-white 
-                px-5 py-2 font-medium transition-colors 
-                text-sm md:text-base whitespace-nowrap cursor-pointer
+                rounded-full bg-black hover:bg-primary text-white 
+                px-4 py-1  transition-colors 
+                text-xs lg:text:sm md:text-sm   cursor-pointer
               "
               onClick={() => router.push("/contact")}
             >

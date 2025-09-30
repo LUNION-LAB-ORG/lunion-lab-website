@@ -1,9 +1,11 @@
-import FAQSection from "@/components/(public)/home/FAQSection";
+import FlashInfo from "@/components/(public)/contact";
+
 import ProcessusTravail from "@/components/(public)/home/ProcessusTravail";
 import ServicesGrids from "@/components/(public)/services/services-grid";
 import Technologies from "@/components/(public)/services/technologies";
 
 import ImageTextCard from "@/components/common/ImageTextCard";
+import PackagesPricing from "@/components/common/PackagesPricing";
 
 const Page = () => {
   return (
@@ -17,7 +19,9 @@ const Page = () => {
       <ProcessusTravail />
 
       <Technologies />
-      <FAQSection />
+
+      <FlashInfo />
+       <PackagesPricing />
     </div>
   );
 };
