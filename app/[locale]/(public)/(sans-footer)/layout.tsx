@@ -2,10 +2,7 @@
 import type { Metadata } from "next";
 import { Figtree, Geist, Geist_Mono } from "next/font/google";
 
-
-
 import LunionNav from "@/components/common/nav/LunionNav";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,19 +27,12 @@ export default function Layout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${figtree.variable} antialiased`}
-        suppressHydrationWarning
-      >
-       
-          <LunionNav />
-          {/* Tout le contenu dynamique doit être Client Component */}
-          {children}
-         
-       
-      </body>
-      
-    </html>
+    <>
+      <>
+        <LunionNav />
+        {/* Tout le contenu dynamique doit être Client Component */}
+        {children}
+      </>
+    </>
   );
 }

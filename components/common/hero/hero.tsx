@@ -1,8 +1,10 @@
 "use client";
+
 import { Button } from "@heroui/button";
 import { FacebookIcon, Instagram, Linkedin, Youtube } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   const iconesTable = [
@@ -11,6 +13,14 @@ export default function Hero() {
     { id: 3, icone: <Linkedin />, url: "#" },
     { id: 4, icone: <Youtube />, url: "#" },
   ];
+
+  const cursorVariants = {
+    float: {
+      y: [0, -10, 0, 10, 0],
+      rotate: [0, 5, -5, 0],
+      transition: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+    },
+  };
 
   return (
     <section className="relative w-full">
@@ -32,76 +42,56 @@ export default function Hero() {
           </h1>
         </div>
 
-        {/* Cursors visibles seulement sur desktop */}
-        <div className="hidden lg:block absolute h-10 left-[65%] top-[44%] w-20">
-          <Image
-            src="/assets/images/cursors/cursor1.png"
-            alt="Hero"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-        <div className="hidden lg:block absolute h-12 left-[28%] top-[24%] w-24">
-          <Image
-            src="/assets/images/cursors/cursor2.png"
-            alt="Hero"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-        <div className="hidden lg:block absolute h-12 left-[39%] top-[54%] w-32">
-          <Image
-            src="/assets/images/cursors/cursor3.png"
-            alt="Hero"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-        <div className="hidden lg:block absolute z-20 h-10 right-[25%] bottom-[8%] w-72">
-          <Image
-            src="/assets/images/cursors/cursor4.png"
-            alt="Hero"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
+        {/* Cursors animés */}
+        <motion.div className="hidden lg:block absolute h-10 left-[65%] top-[44%] w-20" variants={cursorVariants} animate="float">
+          <Image src="/assets/images/cursors/cursor1.png" alt="Hero" fill className="object-cover" priority />
+        </motion.div>
+        <motion.div className="hidden lg:block absolute h-12 left-[28%] top-[24%] w-24" variants={cursorVariants} animate="float">
+          <Image src="/assets/images/cursors/cursor2.png" alt="Hero" fill className="object-cover" priority />
+        </motion.div>
+        <motion.div className="hidden lg:block absolute h-12 left-[39%] top-[54%] w-32" variants={cursorVariants} animate="float">
+          <Image src="/assets/images/cursors/cursor3.png" alt="Hero" fill className="object-cover" priority />
+        </motion.div>
+        <motion.div className="hidden lg:block absolute z-20 h-10 right-[25%] bottom-[8%] w-72" variants={cursorVariants} animate="float">
+          <Image src="/assets/images/cursors/cursor4.png" alt="Hero" fill className="object-cover" priority />
+        </motion.div>
 
-        {/* Bloc violet - visible seulement sur desktop */}
+        {/* Bloc violet desktop */}
         <div className="hidden lg:flex absolute right-0 bottom-4 w-[380px] h-[240px] bg-primary text-white rounded-bl-[160px] rounded-tl-[30%] flex-col justify-center items-center p-12">
           <p className="text-sm leading-relaxed text-center">
             Envie de démarrer un nouveau projet ? Une question ? <br />
             C&apos;est par ici que vous pouvez entamer la conversation.
           </p>
-          <Button
-            className="
-              mt-6 
-              bg-black text-white 
-              px-6 py-4 
-              text-xl
-              rounded-md
-              hover:bg-gray-900
-              w-[70%]
-            "
-          >
+          <Button className="mt-6 bg-black text-white px-6 py-4 text-xl rounded-md hover:bg-gray-900 w-[70%]">
             Allons-y
           </Button>
-
-          {/* Icônes */}
           <div className="mt-4 flex justify-center gap-3 w-full">
             {iconesTable.map((item) => (
-              <div
-                key={item.id}
-                className="border rounded-lg cursor-pointer bg-white/20 p-1.5"
-              >
+              <div key={item.id} className="border rounded-lg cursor-pointer bg-white/20 p-1.5">
                 <Link href={item.url}>{item.icone}</Link>
               </div>
             ))}
           </div>
         </div>
+
+        {/* Bloc violet mobile - bas de l'écran */}
+        <div className="lg:hidden absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-primary text-white rounded-xl flex flex-col justify-center items-center p-6">
+          <p className="text-sm leading-relaxed text-center">
+            Envie de démarrer un nouveau projet ? Une question ? <br />
+            C&apos;est par ici que vous pouvez entamer la conversation.
+          </p>
+          <Button className="mt-4 bg-black text-white px-6 py-3 text-lg rounded-md hover:bg-gray-900 w-full">
+            Allons-y
+          </Button>
+          <div className="mt-3 flex justify-center gap-3 w-full">
+            {iconesTable.map((item) => (
+              <div key={item.id} className="border rounded-lg cursor-pointer bg-white/20 p-1.5">
+                <Link href={item.url}>{item.icone}</Link>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

@@ -28,15 +28,15 @@ const PartnersSection = () => {
           animate={{ x: ["0%", "-100%"] }}
           transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
         >
-          {[...partners, ...partners].map((partner) => (
+          {[...partners, ...partners].map((partner, index) => (
             <div
-              key={partner.id + partner.name}
+              key={`${partner.id}-${index}`} // 🔑 Clé unique pour éviter le warning
               className="
                 flex-shrink-0 
-                w-28 h-20          /* 📱 par défaut : petit sur mobile */
-                sm:w-36 sm:h-24    /* 📱 mobile large */
-                md:w-48 md:h-32    /* 📱 tablette */
-                lg:w-56 lg:h-36    /* 💻 desktop */
+                w-28 h-20
+                sm:w-36 sm:h-24
+                md:w-48 md:h-32
+                lg:w-56 lg:h-36
                 relative rounded-xl overflow-hidden shadow-lg group
               "
             >

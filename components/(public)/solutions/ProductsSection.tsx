@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import HomeTitle from "../home/HomeTitle";
+import Link from "next/link";
 
 // Définition des produits avec couleur titre, couleur sur carte sélectionnée et URL
 const products = [
@@ -59,12 +60,14 @@ export default function ProductsSection() {
 
   return (
     <section className="bg-white py-20">
-      <div className="contaner mx-auto px-6 lg:px-12">
+      <div className=" mx-auto px-6 lg:px-12">
         {/* Titre de section */}
         <div className="flex   justify-center items-center gap-3 mb-12">
-        
           <h2 className="text-4xl font-bold text-purple-700">
-            <HomeTitle text="Nos produits" imageSrc={"/assets/images/vectors/vector_thunder.svg"} />
+            <HomeTitle
+              text="Nos produits"
+              imageSrc={"/assets/images/vectors/vector_thunder.svg"}
+            />
           </h2>
         </div>
 
@@ -76,20 +79,24 @@ export default function ProductsSection() {
               <div
                 key={product.id}
                 className={`${
-                  isSelected ? product.highlightBg  : product.cardBg 
-                } ${product.cardText} overflow-hidden p-6  rounded-t-2xl relative flex items-end min-h-[180px] cursor-pointer transition-all duration-300`}
+                  isSelected ? product.highlightBg : product.cardBg
+                } ${isSelected ? "text-white" : product.cardText} overflow-hidden p-6 rounded-t-2xl relative flex items-end min-h-[180px] cursor-pointer transition-all duration-300`}
                 onClick={() => setSelectedProduct(product)}
               >
-                <a
+                <Link
                   href={product.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`absolute top-4 right-4 ${product.cardBtn}`}
-                  onClick={(e) => e.stopPropagation()} // empêche le click de changer la sélection
+                  onClick={(e) => e.stopPropagation()}
                 >
                   <ExternalLink size={18} />
-                </a>
-                <p className="font-semibold">{product.name}</p>
+                </Link>
+                <p
+                  className={`font-semibold ${isSelected ? "text-white" : ""}`}
+                >
+                  {product.name}
+                </p>
                 <Image
                   src={product.cardImage}
                   alt={product.name}
@@ -116,8 +123,8 @@ export default function ProductsSection() {
         </div>
 
         {/* Bloc descriptif */}
-        <section>
-          <main className="min-h-screen flex items-center justify-center p- md:p-12">
+        <div>
+          <main className=" flex items-center justify-center p- md:p-12">
             <section className="max-w-[1400px] w-full grid grid-cols-12 gap-6 md:gap-8 items-stretch">
               {/* Colonne gauche (contenus) */}
               <div className="col-span-12 lg:col-span-8 flex flex-col gap-6">
@@ -199,7 +206,7 @@ export default function ProductsSection() {
               </aside>
             </section>
           </main>
-        </section>
+        </div>
       </div>
     </section>
   );
