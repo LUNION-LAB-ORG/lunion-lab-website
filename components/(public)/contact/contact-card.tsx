@@ -22,8 +22,8 @@ const ContactCard = () => {
         {/* Overlay Content */}
         <div
           className="absolute overflow-hidden bg-black/90 rounded-2xl flex flex-col justify-center text-white
-                      w-full max-w-sm h-64 md:h-56 md:h-72 p-4 right-10 bottom-4 md:left-10 md:bottom-4 
-                      md:bottom-auto md:top-1/2  md:-translate-y-1/2"
+                      w-full max-w-sm h-64 md:h-72 p-4 bottom-4 md:bottom-4 md:left-10 
+                     md:top-1/2 md:-translate-y-1/2"
         >
           {/* Logo and Title */}
           <div className="flex items-center justify-between gap-3 mb-2">
