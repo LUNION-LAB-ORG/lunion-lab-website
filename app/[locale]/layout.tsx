@@ -1,4 +1,3 @@
-// app/[locale]/layout.tsx
 import "@/styles/globals.css";
 import { ToastProvider } from "@heroui/toast";
 import { Metadata, Viewport } from "next";
