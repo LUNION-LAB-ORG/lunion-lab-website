@@ -1,6 +1,6 @@
 
 import DemarrezProjetSection from "@/components/common/DemarrezProjetSection";
-import DownloadBrochure from "@/components/common/DownloadBrochure";
+// import DownloadBrochure from "@/components/common/DownloadBrochure";
 import { getTranslations } from "next-intl/server";
 
 import DreamTeamTabs from '@/components/(public)/home/DreamTeamTabs';
@@ -32,7 +32,7 @@ export default async function Home() {
            <WorkMethod />
            <PackagesPricing />
            <DemarrezProjetSection />
-           <DownloadBrochure />
+           {/* <DownloadBrochure /> */}
            <FAQSection />
            <LunionLabFooter />
     </div>

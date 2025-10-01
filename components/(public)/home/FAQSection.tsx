@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import Section from "@/components/primitives/Section";
+import Link from "next/link";
 
 interface FAQItem {
   id: number;
@@ -11,6 +12,7 @@ interface FAQItem {
 }
 
 export default function FAQSection() {
+    const phoneNumber = "+2250565508686";
   const [openItems, setOpenItems] = useState<Set<number>>(new Set());
 
   const faqItems: FAQItem[] = [
@@ -132,7 +134,8 @@ export default function FAQSection() {
             Vous ne trouvez pas la réponse que vous cherchez ?
           </p>
           <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
-            Contactez-nous
+           
+          <Link href={`https://wa.me/${phoneNumber}`}> Contactez-nous</Link>
           </button>
         </div>
       </div>

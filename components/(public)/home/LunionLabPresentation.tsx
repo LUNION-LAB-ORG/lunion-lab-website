@@ -7,7 +7,7 @@ import Section from '@/components/primitives/Section';
 
 export default function LunionLabPresentation() {
   return (
-    <Section className=" bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 px-4 sm:px-6 md:px-8 py-8">
+    <Section className=" bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 ">
       
       {/* Header with year */}
       <HomeTitle

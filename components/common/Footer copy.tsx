@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function LunionLabFooter() {
+  const phoneNumber = "+2250565508686";
   return (
     <footer className="-mt-8">
       <div>
@@ -61,7 +62,7 @@ export default function LunionLabFooter() {
                   ou échanger avec notre équipe
                 </p>
                 <button className="bg-primary hover:bg-purple-700 text-white px-8 py-3 rounded-full font-medium transition-colors duration-200">
-                  Prendre un rendez-vous
+               <Link href={`https://wa.me/${phoneNumber}`}> Contactez-nous</Link>
                 </button>
               </div>
             </div>

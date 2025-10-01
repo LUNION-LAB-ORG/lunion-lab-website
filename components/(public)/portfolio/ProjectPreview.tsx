@@ -4,7 +4,7 @@ import Image from "next/image";
 import { projects } from "@/data/projet";
 import React from "react";
 import DemarrezProjetSection from "@/components/common/DemarrezProjetSection";
-import DownloadBrochure from "@/components/common/DownloadBrochure";
+// import DownloadBrochure from "@/components/common/DownloadBrochure";
 import LunionLabFooter from "@/components/common/Footer copy";
 
 
@@ -130,7 +130,7 @@ export default function ProjectPreview({ params }: DetailNewsProps) {
 </div>
 
  <DemarrezProjetSection />
-      <DownloadBrochure />
+      {/* <DownloadBrochure /> */}
       <LunionLabFooter />
     </div>
   );

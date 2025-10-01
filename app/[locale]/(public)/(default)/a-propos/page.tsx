@@ -4,7 +4,7 @@ import LunionLabAbout from "@/components/(public)/about/LunionLabAbout";
 import LunionLabContentBlocks from "@/components/(public)/about/LunionLabContentBlocks";
 import PurpleNavbarAbout from "@/components/(public)/about/PurpleNavbarAbout";
 import DemarrezProjetSection from "@/components/common/DemarrezProjetSection";
-import DownloadBrochure from "@/components/common/DownloadBrochure";
+// import DownloadBrochure from "@/components/common/DownloadBrochure";
 import ImageTextCard from "@/components/common/ImageTextCard";
 
 import React from "react";
@@ -21,7 +21,7 @@ const Page = () => {
       <LunionLabContentBlocks />
       <DreamTeamComponent />
       <DemarrezProjetSection/>
-      <DownloadBrochure/>
+      {/* <DownloadBrochure/> */}
     </div>
   );
 };

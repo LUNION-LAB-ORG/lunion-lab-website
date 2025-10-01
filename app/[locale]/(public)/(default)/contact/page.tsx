@@ -1,9 +1,9 @@
 import ContactCard from "@/components/(public)/contact/contact-card";
 import ContactForm from "@/components/(public)/contact/contact-form";
-import ContactSection from "@/components/(public)/contact/contact-section";
+// import ContactSection from "@/components/(public)/contact/contact-section";
 import PartnersSection from "@/components/(public)/contact/partners-section";
 import FAQSection from "@/components/(public)/home/FAQSection";
-import DownloadBrochure from "@/components/common/DownloadBrochure";
+// import DownloadBrochure from "@/components/common/DownloadBrochure";
 import ImageTextCard from "@/components/common/ImageTextCard";
 import React from "react";
 
@@ -19,7 +19,7 @@ const Page = () => {
       <ContactCard />
       <PartnersSection />
       <ContactForm />
-      <DownloadBrochure />
+      {/* <DownloadBrochure /> */}
       <FAQSection />
     </div>
   );

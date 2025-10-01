@@ -43,7 +43,7 @@ export default function ServicesSection() {
     className="text-2xl sm:text-4xl md:text-5xl ml-0"
           />
         </div>
-        <p className="mt-6 text-gray-300 max-w-2xl mx-auto">
+        <p className="mt-6 text-gray-500 max-w-2xl mx-auto">
           Ces services permettent de répondre aux défis numériques actuels tout en
           optimisant l&apos;impact social et économique des initiatives.
         </p>

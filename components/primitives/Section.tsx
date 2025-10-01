@@ -15,7 +15,7 @@ export const sectionStyle = tv({
       none: "p-0",
       sm: "p-4",
       md: "p-6 md:p-8",
-      lg: "p-8 md:p-12",
+      lg: "px-4 md:px-6 py-8 md:py-12",
       xl: "p-12 md:p-16",
     },
     size: {
@@ -32,7 +32,7 @@ export const sectionStyle = tv({
   },
   defaultVariants: {
     spacing: "md",
-    padding: "none",
+    padding: "lg",
     size: "md",
     bg: "default",
   },

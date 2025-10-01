@@ -1,6 +1,6 @@
 import React from "react";
 import DemarrezProjetSection from "@/components/common/DemarrezProjetSection";
-import DownloadBrochure from "@/components/common/DownloadBrochure";
+// import DownloadBrochure from "@/components/common/DownloadBrochure";
 
 import Hero from "@/components/common/hero/hero";
 import ServicesSection from "@/components/(public)/home/ServicesSection";
@@ -26,7 +26,7 @@ const Page = () => {
       <WorkMethod />
       <PackagesPricing />
       <DemarrezProjetSection />
-      <DownloadBrochure />
+      {/* <DownloadBrochure /> */}
       <FAQSection />
     </div>
   );

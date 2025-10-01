@@ -36,7 +36,7 @@ export default function SecteursActivites() {
   ];
 
   return (
-    <Section className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:p">
+    <Section className="min-h-screen bg-gray-50">
       <div className="max-w-5xl mx-auto">
         {/* Title with background circle */}
         <div className="text-center mb-16 relative">

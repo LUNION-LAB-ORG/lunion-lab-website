@@ -21,7 +21,7 @@ const Page = () => {
       <Technologies />
 
       <FlashInfo />
-       <PackagesPricing />
+      <PackagesPricing />
     </div>
   );
 };
