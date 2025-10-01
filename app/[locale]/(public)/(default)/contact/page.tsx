@@ -14,12 +14,12 @@ const Page = () => {
         imageUrl="/assets/images/all-img/image_back.png"
         text="Contact"
       />
-     
+
       {/* <ContactSection/> */}
       <ContactCard />
-      <PartnersSection/>
+      <PartnersSection />
       <ContactForm />
-       <DownloadBrochure />
+      <DownloadBrochure />
       <FAQSection />
     </div>
   );

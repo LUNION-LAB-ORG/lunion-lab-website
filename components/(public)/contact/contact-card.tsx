@@ -22,16 +22,15 @@ const ContactCard = () => {
         {/* Overlay Content */}
         <div
           className="absolute overflow-hidden bg-black/90 rounded-2xl flex flex-col justify-center text-white
-                     right-10 bottom-4 w-1/2 h-64 p-2
-                     md:left-10 md:bottom-4 md:w-1/2 md:h-72
-                      sm:bottom-auto sm:top-1/2   sm:-translate-y-1/2  sm:h-56 sm:w-full"
+                      w-full max-w-sm h-64 md:h-56 md:h-72 p-4 right-10 bottom-4 md:left-10 md:bottom-4 
+                      md:bottom-auto md:top-1/2  md:-translate-y-1/2"
         >
           {/* Logo and Title */}
           <div className="flex items-center justify-between gap-3 mb-2">
             <h2 className="lg:text-3xl text-white font-figtree p-4 font-bold sm:text-xl">
               Lunion-Lab
             </h2>
-            <div className="w-8 h-8 rounded flex items-center justify-center sm:w-6 sm:h-6">
+            <div className="w-8 md:h-8 rounded flex items-center justify-center ">
               <Image
                 src={"/assets/images/all-img/contact.png"}
                 alt="Contact"
