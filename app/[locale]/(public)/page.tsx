@@ -23,8 +23,9 @@ export default async function Home() {
     <div>
       <LunionNav />
       <Hero />
-           <ServicesSection />
+          
            <LunionLabPresentation />
+            <ServicesSection />
            <SecteursActivites />
            <NosSolutions />
            <PurpleNavbar />

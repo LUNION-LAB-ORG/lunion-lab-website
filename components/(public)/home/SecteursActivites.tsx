@@ -40,9 +40,7 @@ export default function SecteursActivites() {
       <div className="max-w-5xl mx-auto">
         {/* Title with background circle */}
         <div className="text-center mb-16 relative">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-40 h-40 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-purple-100 rounded-full opacity-20"></div>
-          </div>
+          
           <h1 className="relative text-3xl sm:text-4xl lg:text-5xl font-bold text-purple-600 mb-4">
            <HomeTitle
         text="#Les Secteurs d'activités"

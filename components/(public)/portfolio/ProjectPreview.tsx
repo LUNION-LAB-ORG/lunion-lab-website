@@ -1,22 +1,23 @@
-"use client";
+
 
 import Image from "next/image";
-import { projects } from "@/data/projet";
+import { findProjectById, projects } from "@/data/projet";
 import React from "react";
 import DemarrezProjetSection from "@/components/common/DemarrezProjetSection";
 // import DownloadBrochure from "@/components/common/DownloadBrochure";
 import LunionLabFooter from "@/components/common/Footer copy";
+import Link from "next/link";
 
 
 interface DetailNewsProps {
   params: { id: string };
 }
 
-export default function ProjectPreview({ params }: DetailNewsProps) {
-  const { id } = params; // ✅ juste accéder directement
+export default async function ProjectPreview({ params }: DetailNewsProps) {
+  const { id } = await params; // ✅ juste accéder directement
 
-  const detailProjet = projects.find((projet) => String(projet.id) === String(id));
-
+  const detailProjet = findProjectById(id);
+console.log("Détails du projet :", detailProjet);
   if (!detailProjet) {
     return (
       <section className="w-full flex font-figtree items-center justify-center py-16 px-6 bg-white">
@@ -82,8 +83,9 @@ export default function ProjectPreview({ params }: DetailNewsProps) {
                 )}
               </div>
 
-              <button className="bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition">
-                Visiter le site
+              <button  className="bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition">
+               
+                <Link href={`${detailProjet.solutionLink}`} > Visiter le site</Link>
               </button>
             </div>
 

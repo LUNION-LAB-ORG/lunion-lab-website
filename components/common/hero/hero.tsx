@@ -5,14 +5,15 @@ import { FacebookIcon, Instagram, Linkedin, Youtube } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { IoLogoTiktok } from "react-icons/io5";
 
 export default function Hero() {
   const iconesTable = [
-    { id: 1, icone: <FacebookIcon />, url: "#" },
-    { id: 2, icone: <Instagram />, url: "#" },
-    { id: 3, icone: <Linkedin />, url: "#" },
-    { id: 4, icone: <Youtube />, url: "#" },
-  ];
+    { id: 1, icone: <FacebookIcon />, url: "https://www.facebook.com/share/1Cqq9P2ktD/?mibextid=wwXIfr" },
+    { id: 2, icone: <Instagram />, url: "https://www.instagram.com/lunionlab?igsh=MW4yM3FiN3BxenFlaw==" },
+    { id: 3, icone: <Linkedin />, url: "https://www.linkedin.com/company/lunion-lab/?viewAsMember=true" },
+    { id: 4, icone: <IoLogoTiktok />, url: "https://www.tiktok.com/@lunion.lab?_t=ZM-90Ey2DpQUxA&_r=1" },
+    ];
 
   const cursorVariants = {
     float: {
@@ -35,7 +36,7 @@ export default function Hero() {
 
         {/* Texte overlay */}
         <div className="absolute top-1/4 sm:top-1/3 left-4 sm:left-8 md:left-20 max-w-[90%] sm:max-w-md md:max-w-lg lg:max-w-3xl xl:max-w-4xl backdrop-blur-md bg-black/20 text-white p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl">
-          <h1 className="text-lg sm:text-2xl md:text-4xl font-bold leading-snug">
+          <h1 className="text-lg sm:text-2xl md:text-4xl font-bold font-figtree leading-snug">
             Une grande technologie <br />
             repose toujours sur des <br />
             relations parfaites
@@ -53,7 +54,14 @@ export default function Hero() {
           <Image src="/assets/images/cursors/cursor3.png" alt="Hero" fill className="object-cover" priority />
         </motion.div>
         <motion.div className="hidden lg:block absolute z-20 h-10 right-[25%] bottom-[8%] w-72" variants={cursorVariants} animate="float">
-          <Image src="/assets/images/cursors/cursor4.png" alt="Hero" fill className="object-cover" priority />
+       <div className="flex  items-center gap-2">
+        <span className="text-white text-xl font-semibold font-figtree"> 
+        Nous suivre
+       </span>
+       <div className="w-32 bg-white h-1">
+
+       </div>
+       </div>
         </motion.div>
 
         {/* Bloc violet desktop */}

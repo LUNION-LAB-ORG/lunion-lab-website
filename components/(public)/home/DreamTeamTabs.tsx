@@ -44,25 +44,81 @@ const DreamTeamTabs = () => {
 
   const responsables = [
     {
-      name: "Mr Cédric Assah",
+      name: "M.Cédric Assah",
       role: "Le Commandant de bord",
       imageSrc: "/assets/images/membres/membre1.jpg"
     },
     {
-      name: "Mr Anderson Kouadio",
+      name: "M.Anderson Kouadio",
       role: "Le Couteau-suisse du code",
       imageSrc: "/assets/images/membres/membre2.jpg"
     },
     {
-      name: "Mr Yannick DeVinci",
+      name: "M.Yannick DeVinci",
       role: "Le Penseur de l'interface",
       imageSrc: "/assets/images/membres/membre3.jpg"
     }
   ];
 
   const founders = [
+    
     {
-      name: "Mr Alain SIA",
+      name: "M.Francis Kouakou",
+      role: "Responsable IT",
+      imageSrc: "/assets/images/membres/membre1.jpg",
+      
+    },
+    {
+      name: "M.Alain SIA",
+      role: "Le Tisseur de liens et Le Chasseur d'affaires",
+      imageSrc: "/assets/images/membres/membre1.jpg",
+      
+    },
+  ];
+
+  const itTeam = [
+    {
+      name: "M.Francis Kouakou",
+      role: "Responsable IT",
+      imageSrc: "/assets/images/membres/membre1.jpg",
+    },
+    {
+      name: "M.Yamoussa Keita",
+      role: "Développeur Full-Stack",
+      imageSrc: "/assets/images/membres/membre1.jpg",
+    },
+   
+    {
+      name: "Axel Kouakou",
+      role: "L'architecte de applications web",
+      imageSrc: "/assets/images/membres/membre3.jpg",
+    }
+    ,{
+      name: "Oriest Djelloh",
+      role: "L'architecte des applis mobiles",
+      imageSrc: "/assets/images/membres/membre3.jpg",
+    },
+    { 
+      name: "Félix Kouadio",
+      role: "L'architecte des applis web",
+      imageSrc: "/assets/images/membres/membre3.jpg",
+    },
+    {
+      name: "Issa Coulibaly",
+      role: "L'architecte des applis web",
+      imageSrc: "/assets/images/membres/membre1.jpg",
+    }
+  ];
+
+  const commerciaux = [
+   
+    {
+      name: "M.Stéphane",
+      role: "Tisseur de liens",
+      imageSrc: "/assets/images/membres/membre2.jpg",
+    },
+     {
+      name: "M.Alain SIA",
       role: "Le Tisseur de liens et Le Chasseur d'affaires",
       imageSrc: "/assets/images/membres/membre1.jpg",
       isFounder: true
@@ -75,50 +131,14 @@ const DreamTeamTabs = () => {
     }
   ];
 
-  const itTeam = [
-    {
-      name: "Mr Francis Kouakou",
-      role: "Responsable IT",
-      imageSrc: "/assets/images/membres/membre1.jpg",
-    },
-    {
-      name: "Mr Yamoussa Keita",
-      role: "Développeur Full-Stack",
-      imageSrc: "/assets/images/membres/membre1.jpg",
-    },
-    {
-      name: "Mme Livic Aheto",
-      role: "La Génie des applis mobiles",
-      imageSrc: "/assets/images/membres/membre2.jpg",
-    },
-    {
-      name: "Axel",
-      role: "L'architecte de sites web",
-      imageSrc: "/assets/images/membres/membre3.jpg",
-    }
-  ];
-
-  const commercial = [
-    {
-      name: "Mr Keita",
-      role: "Maître des ventes",
-      imageSrc: "/assets/images/membres/membre1.jpg",
-    },
-    {
-      name: "Mr Stéphane",
-      role: "Tisseur de liens",
-      imageSrc: "/assets/images/membres/membre2.jpg",
-    }
-  ];
-
   const designers = [
     {
-      name: "Mr Pasal",
+      name: "M.Pascal",
       role: "Maître du visuel",
       imageSrc: "/assets/images/membres/membre3.jpg",
     },
     {
-      name: "Mr Hassane Boko",
+      name: "M.Hassane Boko",
       role: "L'artiste",
       imageSrc: "/assets/images/membres/membre3.jpg",
     }
@@ -128,7 +148,7 @@ const DreamTeamTabs = () => {
     { id: 'doyens', label: 'Chez les Doyens', icon: '👥', color: 'bg-primary' },
     { id: 'it', label: 'Chez les IT', icon: '👥', color: 'bg-primary' },
     { id: 'designers', label: 'Chez les Designers', icon: '👥', color: 'bg-primary' },
-    { id: 'commerciaux', label: 'Chez le commerciaux', icon: '👥', color: 'bg-primary' }
+    { id: 'commerciaux', label: 'Chez les business Developer ', icon: '👥', color: 'bg-primary' }
   ];
 
   const getCurrentTeamMembers = () => {
@@ -140,7 +160,7 @@ const DreamTeamTabs = () => {
       case 'designers':
         return designers;
       case 'commerciaux':
-        return commercial;
+        return commerciaux;
       default:
         return responsables;
     }
@@ -150,9 +170,9 @@ const DreamTeamTabs = () => {
     <Section className="max-w-7xl mx-auto p-8 bg-gray-50">
       {/* Header */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-6xl font-bold text-purple-400 mb-2">
+        <div className="text-4xl md:text-6xl font-bold text-purple-400 mb-2">
          <HomeTitle text='La Dream Team' imageSrc='/assets/images/all-img/team_icone.png' />
-        </h1>
+        </div>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -182,7 +202,7 @@ const DreamTeamTabs = () => {
         </div>
 
         {/* Right Side - Team Members */}
-        <div className="bg-white rounded-3xl p-8 shadow-lg">
+        <div className="bg- rounded-3xl p-8">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {getCurrentTeamMembers().map((member, index) => (
               <TeamMember key={index} {...member} />

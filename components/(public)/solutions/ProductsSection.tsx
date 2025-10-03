@@ -27,7 +27,7 @@ const products = [
     id: 2,
     name: "Lunion Educ",
     description: "Révolutionnez votre gestion  la gestion immobilière",
-    mainImage: "/assets/images/all-img/educ_building.jpg",
+    mainImage: "/assets/images/solution/solution_educ.png",
     dashboardImage: "/assets/images/all-img/educ_system.png",
     mockupImage: "/assets/images/produits/mockup_educ.png",
     cardImage: "/assets/images/produits/product1.png",
@@ -42,7 +42,7 @@ const products = [
     id: 3,
     name: "Lunion Secure",
     description: "Révolutionnez la gestion des ressources humaines",
-    mainImage: "/assets/images/all-img/secure_building.jpg",
+    mainImage: "/assets/images/solution/solution_secu.png",
     dashboardImage: "/assets/images/all-img/secu_system.png",
     mockupImage: "/assets/images/produits/mockup_secu.png",
     cardImage: "/assets/images/produits/produit3.png",
@@ -163,29 +163,52 @@ export default function ProductsSection() {
                     </h3>
 
                     {/* Décors images en bas */}
-                    <div className="absolute bottom-2 right-0 flex gap-2 sm:gap-4 items-end p-2 md:p-0">
-                      <div className="relative lg:w-36 sm:w-24 lg:h-36 w-32 h-32 sm:h-24  translate-y-4">
+                    <div className="absolute bottom-0 right-0 flex items-end justify-center gap-3 sm:gap-6 p-2 md:p-0">
+                      {/* Image 1 */}
+                      <div
+                        className="relative lg:w-36 sm:w-24 w-28 h-28 lg:h-36 sm:h-24 
+                  bg-white/30 rounded-2xl drop-shadow-xl 
+                  translate-y-6 rotate-[-12deg] 
+                  hover:translate-y-2 hover:rotate-[-6deg] 
+                  transition-transform duration-500 ease-out"
+                      >
                         <Image
-                          src="/assets/images/all-img/doc_icone.png"
+                          src="/assets/images/solution/paper_icone.png"
                           alt="Décor 1"
                           fill
-                          className="object-over rounded-2xl"
+                          className="object-cover rounded-2xl"
                         />
                       </div>
-                      <div className="relative lg:w-36 sm:w-24 lg:h-36 w-32 h-32 sm:h-24 translate-y-4">
+
+                      {/* Image 2 */}
+                      <div
+                        className="relative lg:w-36 sm:w-24 w-28 h-28 lg:h-36 sm:h-24 
+                  bg-white/30 rounded-2xl drop-shadow-2xl z-10
+                  translate-y-8 rotate-[-8deg] 
+                  hover:translate-y-3 hover:rotate-[-2deg] 
+                  transition-transform duration-500 ease-out"
+                      >
                         <Image
-                          src="/assets/images/all-img/cube_icone.png"
+                          src="/assets/images/solution/cubes_icone.png"
                           alt="Décor 2"
                           fill
-                          className="object-cver rounded-2xl"
+                          className="object-cover rounded-2xl"
                         />
                       </div>
-                      <div className="relative lg:w-36 sm:w-24 lg:h-36 w-32 h-32 sm:h-24  translate-y-4">
+
+                      {/* Image 3 */}
+                      <div
+                        className="relative lg:w-36 sm:w-24 w-28 h-28 lg:h-36 sm:h-24 
+                  bg-white/30 rounded-2xl drop-shadow-xl
+                  translate-y-10 rotate-[-15deg] 
+                  hover:translate-y-4 hover:rotate-[-8deg] 
+                  transition-transform duration-500 ease-out"
+                      >
                         <Image
-                          src="/assets/images/all-img/agenda_icone.png"
+                          src="/assets/images/solution/agendas_icone.png"
                           alt="Décor 3"
                           fill
-                          className="object-covr rounded-2xl"
+                          className="object-cover rounded-2xl"
                         />
                       </div>
                     </div>

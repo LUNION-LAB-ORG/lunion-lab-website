@@ -69,7 +69,7 @@ export default async function RootLayout({
       >
         <NextIntlClientProvider messages={messages} locale={locale}>
           <QueryProvider>
-            <ThemeProviders themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+            <ThemeProviders themeProps={{ attribute: "class", defaultTheme: "light" }}>
               <ToastProvider placement="top-center" toastProps={{ shouldShowTimeoutProgress: true }} />
               <NuqsAdapter>
                 <AuthProvider>

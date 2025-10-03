@@ -11,11 +11,11 @@ export default function DigitalTransformationSection() {
           {/* Texte et icônes */}
           <div>
             <p className="text-gray-700 mb-6 text-sm leading-relaxed">
-              En tant leaders dans le domaine de la transformation digitale, nous
-              comprenons les défis uniques auxquels sont confrontés les
-              entreprises. Notre équipe d’experts passionnés est là pour vous
+              En tant qu&apos;acteur dans le domaine de la transformation digitale,
+              nous comprenons les défis uniques auxquels sont confrontés les
+              entreprises. Notre équipe d&apos;acteur experts passionnés est là pour vous
               aider à relever ces défis en vous fournissant des solutions
-              innovantes et adaptées à vos besoins.
+              innovantes et adaptées à vos besoins.
             </p>
 
             <div className="space-y-4">

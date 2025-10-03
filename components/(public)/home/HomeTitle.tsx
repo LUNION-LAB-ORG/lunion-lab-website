@@ -5,9 +5,11 @@ import React from "react";
 
 interface GradientTextProps {
   text: string;
-  imageSrc?: string | null; // devient optionnel
+  imageSrc?: string | null;
   className?: string;
-  useGradient?: boolean; // pour activer/désactiver le gradient
+  useGradient?: boolean; // pour activer/désactiver le gradient du texte
+  textColor?: string; // couleur du texte
+  imageClassName?: string; // nouvelle prop : customiser l'image
 }
 
 const HomeTitle: React.FC<GradientTextProps> = ({
@@ -15,11 +17,13 @@ const HomeTitle: React.FC<GradientTextProps> = ({
   imageSrc,
   className,
   useGradient = true,
+  textColor = "text-black",
+  imageClassName = "", // valeur par défaut vide
 }) => {
   return (
     <div className={`text-center ${className || ""}`}>
       <div className="inline-flex items-center relative gap-2 font-bold mb-4">
-        {/* Image (rendu seulement si imageSrc est défini ET non vide) */}
+        {/* Image (optionnelle) */}
         {imageSrc ? (
           <div className="w-15 h-15 z-10 -top-3 left-0 rounded-lg flex items-center absolute justify-center">
             <Image
@@ -27,7 +31,7 @@ const HomeTitle: React.FC<GradientTextProps> = ({
               alt="logo"
               width={50}
               height={50}
-              className="object-contain"
+              className={`object-contain ${imageClassName}`} // injection de ta classe
             />
           </div>
         ) : null}
@@ -38,7 +42,9 @@ const HomeTitle: React.FC<GradientTextProps> = ({
             {text}
           </div>
         ) : (
-          <div className={`relative z-10 ${className || ""}`}>{text}</div>
+          <div className={`relative z-10 font-figtree ${textColor}`}>
+            {text}
+          </div>
         )}
       </div>
     </div>
