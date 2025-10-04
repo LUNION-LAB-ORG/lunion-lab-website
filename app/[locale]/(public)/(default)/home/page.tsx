@@ -17,8 +17,9 @@ const Page = () => {
   return (
     <div>
       <Hero />
-      <ServicesSection />
+    
       <LunionLabPresentation />
+        <ServicesSection />
       <SecteursActivites />
       <NosSolutions />
       <PurpleNavbar />

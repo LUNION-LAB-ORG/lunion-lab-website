@@ -11,9 +11,9 @@ const LunionLabAbout = () => {
       {/* Company description */}
       <div className="text-center mb-10">
         <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-          Lunion-Lab est une startup ivoirienne composée d&pos;une équipe 
-          jeune, passionnée et ambitieuse, motivée par l&pos;innovation et 
-          l&pos;impact social.
+          Lunion-Lab est une startup ivoirienne composée d&apos;une équipe 
+          jeune, passionnée et ambitieuse, motivée par l&apos;innovation et 
+          l&apos;impact social.
         </p>
       </div>
 
@@ -37,21 +37,26 @@ const LunionLabAbout = () => {
   </div>
 
   {/* Device Mockup */}
-  <div className="w-full md:w-1/2  bg-black relative h-64 rounded-2xl md:h-80">
-    
+  <div className="w-full md:w-1/2   relative h-64 rounded-2xl md:h-80">
+     <Image
+      src="/assets/images/a-propos/bloc1.jpg"
+      alt="video1"
+      fill
+      className="object-cover w-full h-full rounded-lg"
+    />
   </div>
 </div>
 
       {/* Values and Device Section */}
    <div className="flex flex-col md:flex-row gap-5 items-center justify-center ">
   {/* Image */}
-  <div className="relative w-64  bg-black md:w-1/2 h-64 md:h-80 lg:h-[290px] rounded-xl ">
-    {/* <Image
-      src="/assets/images/all-img/video1.png"
+  <div className="relative w-64   md:w-1/2 h-64 md:h-80 lg:h-[290px] rounded-xl ">
+    <Image
+      src="/assets/images/a-propos/valeurs.jpg"
       alt="video1"
       fill
       className="object-cover w-full h-full rounded-lg"
-    /> */}
+    />
   </div>
 
   {/* Div jaune */}

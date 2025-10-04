@@ -70,7 +70,7 @@ const LunionNav = () => {
               <div className="absolute text-[#616369] font-figtree top-full left-0 mt-2 w-[280px] sm:w-[300px] bg-white rounded-md shadow-lg py-1">
                 {/* liens */}
                 <Link
-                  href="/about"
+                  href="/a-propos"
                   className="block px-4 py-3 text-sm  font-semibold text-[#5B00A5] hover:bg-amber-100 border-b"
                   onClick={() => setIsSubMenuOpen(false)}
                 >

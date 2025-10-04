@@ -8,9 +8,24 @@ export default function NosSolutions() {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const solutions = [
-    { name: "LUNION BOOKING", logo: "/assets/images/projet/projet3.png", description: "Créez votre logement sur Lunion Booking" },
-    { name: "LUNION SECU", logo: "/assets/images/projet/projet3.png", description: "Sécurisez vos opérations" },
-    { name: "LUNION EDUC", logo: "/assets/images/projet/projet3.png", description: "Gérez vos données efficacement" },
+    { 
+      name: "LUNION BOOKING", 
+      logo: "/assets/images/solution/lunion_booking.jpg", 
+      description: "Créez votre logement sur Lunion Booking",
+      bigImage: "/assets/images/all-img/lunion_booking_logo.png" // grande image
+    },
+    { 
+      name: "LUNION SECU", 
+      logo: "/assets/images/solution/lunion_secu.png", 
+      description: "Sécurisez vos opérations",
+      bigImage: "/assets/images/solution/secu_bg.png"
+    },
+    { 
+      name: "LUNION EDUC", 
+      logo: "/assets/images/solution/lunion_educ.jpg", 
+      description: "Gérez vos données efficacement",
+      bigImage: "/assets/images/solution/lunion_educ_collage.png"
+    },
   ];
 
   const backgroundStyle: React.CSSProperties = {
@@ -24,28 +39,35 @@ export default function NosSolutions() {
   };
 
   return (
-    <Section className="relative min-h-screen overflow-hidden px-4 sm:px-8 md:px-16 lg:px-32" style={backgroundStyle}>
+    <Section 
+      className="relative min-h-screen overflow-hidden px-4 sm:px-8 md:px-16 lg:px-32" 
+      style={backgroundStyle}
+    >
       <div className="relative z-10 container mx-auto py-16">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center min-h-screen">
 
           {/* Left Content */}
           <div className="space-y-6 md:space-y-8">
-            <h1 className=" text-purple-400 ">
-           <div className="flex justify-start  w-full px-0">
-  <HomeTitle
-    text="Nos solutions"
-    imageSrc="/assets/images/vectors/vector2.svg"
-    className="text-3xl sm:text-4xl md:text-5xl ml-0"
-  />
-</div>
-
-
+            <h1 className="text-purple-400">
+              <div className="flex justify-start w-full px-0">
+                <HomeTitle
+                  text="Nos solutions"
+                  imageSrc="/assets/images/vectors/vector2.svg"
+                  className="text-3xl sm:text-4xl md:text-5xl ml-0"
+                  useGradient={false}
+                  textColor="text-white"
+                  imageClassName="mb-2 filter invert brightness-1"
+                />
+              </div>
             </h1>
+
             <p className="text-white/90 text-base sm:text-lg md:text-lg leading-relaxed max-w-full sm:max-w-md">
               Nous créons des solutions claires et intuitives pour répondre aux besoins de votre entreprise.
             </p>
 
-            <h2 className="text-xl sm:text-2xl md:text-2xl font-bold text-white">{solutions[activeSlide].name}</h2>
+            <h2 className="text-xl sm:text-2xl md:text-2xl font-bold text-white">
+              {solutions[activeSlide].name}
+            </h2>
 
             {/* Logos */}
             <div className="flex space-x-2 sm:space-x-3 md:space-x-4 mt-4 justify-start">
@@ -71,7 +93,7 @@ export default function NosSolutions() {
             </div>
 
             {/* Pagination dots */}
-            <div className="flex space-x-2 mt-4 sm:mt-6  justify-center">
+            <div className="flex space-x-2 mt-4 sm:mt-6 justify-center">
               {solutions.map((_, index) => (
                 <div
                   key={index}
@@ -82,14 +104,14 @@ export default function NosSolutions() {
             </div>
           </div>
 
-          {/* Right Content */}
+          {/* Right Content - Dynamique */}
           <div className="relative mt-8 lg:mt-0 flex justify-center lg:justify-end">
             <Image
-              src={"/assets/images/all-img/lunion_booking_logo.png"}
-              alt="lunion-booking"
+              src={solutions[activeSlide].bigImage}
+              alt={solutions[activeSlide].name}
               width={616}
               height={517}
-              className=""
+              className="transition-all duration-500 ease-in-out"
             />
           </div>
         </div>

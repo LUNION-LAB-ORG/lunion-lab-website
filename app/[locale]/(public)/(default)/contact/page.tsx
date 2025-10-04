@@ -1,5 +1,6 @@
 import ContactCard from "@/components/(public)/contact/contact-card";
 import ContactForm from "@/components/(public)/contact/contact-form";
+
 // import ContactSection from "@/components/(public)/contact/contact-section";
 import PartnersSection from "@/components/(public)/contact/partners-section";
 import FAQSection from "@/components/(public)/home/FAQSection";
@@ -18,6 +19,7 @@ const Page = () => {
       {/* <ContactSection/> */}
       <ContactCard />
       <PartnersSection />
+    
       <ContactForm />
       {/* <DownloadBrochure /> */}
       <FAQSection />

@@ -13,7 +13,7 @@ const ServicesGrids = () => {
       title: "Formation",
       image: "/assets/images/services/service2.jpg",
       description:
-        "Faites monter vos équipes en puissance. Nos formations pratiques et interactives donnent à vos collaborateurs les compétences qu'il leur faut pour exceller. Stratégie digitale, marketing, design ou gestion de projet : nous transformons vos talents en experts capables de faire décoller votre activité."
+        "Faites monter vos équipes en compétences. Nos formations pratiques et interactives donnent à vos collaborateurs les compétences qu'il leur faut pour exceller. Stratégie digitale, marketing, design ou gestion de projet : nous transformons vos talents en experts capables de faire décoller votre activité."
     },
     {
       title: "UI/UX Design",
