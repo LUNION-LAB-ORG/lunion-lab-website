@@ -90,6 +90,7 @@ export const projects: Project[] = [
     playStoreImg: "/assets/images/all-img/plays_store.png",
     appStoreImg: "/assets/images/all-img/app_store.png",
     isWeb: true,
+    
     isMobile: false,
     goal: "string",
     description: "",
