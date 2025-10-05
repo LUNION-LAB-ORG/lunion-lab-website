@@ -1,6 +1,8 @@
 "use client";
+
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import HomeTitle from "./HomeTitle";
 import Section from "@/components/primitives/Section";
 
@@ -12,7 +14,7 @@ export default function NosSolutions() {
       name: "LUNION BOOKING", 
       logo: "/assets/images/solution/lunion_booking.jpg", 
       description: "Créez votre logement sur Lunion Booking",
-      bigImage: "/assets/images/all-img/lunion_booking_logo.png" // grande image
+      bigImage: "/assets/images/all-img/lunion_booking_logo.png"
     },
     { 
       name: "LUNION SECU", 
@@ -75,8 +77,7 @@ export default function NosSolutions() {
                 <div
                   key={index}
                   className={`relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 cursor-pointer rounded-lg overflow-hidden transition-transform duration-300 
-                    ${index === activeSlide ? "scale-100 translate-y-0" : "scale-90 translate-y-2"}
-                  `}
+                    ${index === activeSlide ? "scale-100 translate-y-0" : "scale-90 translate-y-2"}`}
                   onClick={() => setActiveSlide(index)}
                 >
                   <Image
@@ -106,13 +107,15 @@ export default function NosSolutions() {
 
           {/* Right Content - Dynamique */}
           <div className="relative mt-8 lg:mt-0 flex justify-center lg:justify-end">
-            <Image
-              src={solutions[activeSlide].bigImage}
-              alt={solutions[activeSlide].name}
-              width={616}
-              height={517}
-              className="transition-all duration-500 ease-in-out"
-            />
+            <Link href="/solutions">
+              <Image
+                src={solutions[activeSlide].bigImage}
+                alt={solutions[activeSlide].name}
+                width={616}
+                height={517}
+                className="transition-all duration-500 ease-in-out cursor-pointer"
+              />
+            </Link>
           </div>
         </div>
       </div>

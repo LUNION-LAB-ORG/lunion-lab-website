@@ -37,7 +37,7 @@ export default function FAQSection() {
       id: 4,
       question: "Comment puis-je entrer en contact avec vous ?",
       answer:
-        "Vous pouvez nous contacter via notre formulaire de contact sur le site web, par email à [votre email], ou par téléphone au [votre numéro de téléphone]. Nous serons ravis de répondre à toutes vos questions et de discuter de vos besoins en détail.",
+        "Vous pouvez nous contacter via notre formulaire de contact sur le site web, par email à support@lunion-lab.com,ou par téléphone/WhatsApp au +2250565508686.Nous serons ravis de répondre à toutes vos questions et de discuter de vos besoins en détail.",
     },
     {
       id: 5,

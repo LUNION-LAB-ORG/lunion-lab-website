@@ -1,5 +1,5 @@
 import React from "react";
-import { Linkedin, Facebook, Youtube, Instagram } from "lucide-react";
+import { Linkedin, Facebook, Youtube, Instagram, LinkedinIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -87,17 +87,18 @@ export default function LunionLabFooter() {
             <div className="md:col-span-1">
               <h3 className="text-xl font-semibold mb-6">Suivez-nous</h3>
               <div className="flex space-x-4">
-                <div className="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors cursor-pointer">
+                <Link href={''} className="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors cursor-pointer">
                   <Linkedin size={20} className="text-gray-300" />
-                </div>
+                </Link>
                 <div className="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors cursor-pointer">
-                  <Facebook size={20} className="text-gray-300" />
+                 
+                  <Link href={'https://www.facebook.com/share/1Cqq9P2ktD/?mibextid=wwXIfr'}>  <Facebook size={20} className="text-gray-300" /> </Link>
                 </div>
+                
                 <div className="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors cursor-pointer">
-                  <Youtube size={20} className="text-gray-300" />
-                </div>
-                <div className="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors cursor-pointer">
-                  <Instagram size={20} className="text-gray-300" />
+                
+                      <Link href={'https://www.instagram.com/lunionlab?igsh=MW4yM3FiN3BxenFlaw=='}>   <Instagram size={20} className="text-gray-300" /> </Link>
+                  
                 </div>
               </div>
             </div>

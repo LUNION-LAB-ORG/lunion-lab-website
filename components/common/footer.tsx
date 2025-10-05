@@ -7,6 +7,7 @@ export const Footer = () => {
   return (
     <footer className="w-full flex items-center justify-center py-3">
       <Link
+     
         isExternal
         className="flex items-center gap-1 text-current"
         href="https://lunion-lab.com"
