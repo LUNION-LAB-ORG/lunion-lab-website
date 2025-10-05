@@ -1,10 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { Briefcase } from "lucide-react";
+import { motion } from "framer-motion";
 import HomeTitle from "./HomeTitle";
-import Section from "@/components/primitives/Section";
-import Main from "@/components/primitives/Main";
 
 const steps = [
   {
@@ -29,14 +27,26 @@ const steps = [
   },
 ];
 
+// Animation constante (flottement vertical)
+const floatAnimation = {
+  y: [0, -10, 0, 10, 0], // mouvement vertical
+  transition: {
+    duration: 4, // durée totale de l’animation
+    repeat: Infinity, // répétition infinie
+    ease: "easeInOut",
+  },
+};
+
 export default function WorkMethod() {
   return (
-    <div className="bg-white py-2 px-6 relative  overflow-hidden ">
+    <div className="bg-white py-2 px-6 relative overflow-hidden">
       {/* Titre */}
       <div className="text-center mb-16">
         <div className="flex flex-col items-center text-3xl md:text-6xl gap-2 md:flex-row md:justify-center">
-          
-         <HomeTitle   imageSrc="/assets/images/vectors/vector_job.svg" text=" Notre manière de travailler" />
+          <HomeTitle
+            imageSrc="/assets/images/vectors/vector_job.svg"
+            text=" Notre manière de travailler"
+          />
         </div>
         <p className="mt-6 text-gray-600 max-w-2xl mx-auto text-center sm:text-left">
           Chez Lunion Lab, nous mettons l&apos;accent sur la collaboration et sur
@@ -49,8 +59,11 @@ export default function WorkMethod() {
         {/* Colonne gauche */}
         <div className="flex flex-col gap-6">
           {steps.slice(0, 2).map((step, i) => (
-            <div key={i} className="bg-gray-100 rounded-xl p-6 shadow-sm">
-              {/* step.number au début */}
+            <motion.div
+              key={i}
+              animate={floatAnimation}
+              className="bg-gray-100 rounded-xl p-6 shadow-sm"
+            >
               <div
                 className="font-bold bg-clip-text text-transparent mb-2 text-4xl sm:text-3xl md:text-4xl lg:text-4xl text-center md:text-left"
                 style={{
@@ -62,12 +75,12 @@ export default function WorkMethod() {
               </div>
               <h3 className="text-lg font-semibold mb-2 text-center md:text-left">{step.title}</h3>
               <p className="text-gray-600 text-sm leading-relaxed text-center md:text-left">{step.desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Image centrale */}
-        <div className="relative hidden lg:flex justify-center items-center lg:col-span-1  h-64 sm:h-80 md:h-96 md:my-10 lg:h-full">
+        <div className="relative hidden lg:flex justify-center items-center lg:col-span-1 h-64 sm:h-80 md:h-96 md:my-10 lg:h-full">
           <Image
             src="/assets/images/all-img/img_methode.png"
             alt="Personne utilisant un téléphone"
@@ -79,10 +92,13 @@ export default function WorkMethod() {
         {/* Colonne droite */}
         <div className="flex flex-col gap-6">
           {steps.slice(2, 4).map((step, i) => (
-            <div key={i} className="bg-gray-100 rounded-xl mb-4 p-6 shadow-sm">
-              {/* step.number au début */}
+            <motion.div
+              key={i}
+              animate={floatAnimation}
+              className="bg-gray-100 rounded-xl mb-4 p-6 shadow-sm"
+            >
               <div
-                className="font-bold bg-clip-text text-transparent  text-4xl sm:text-3xl md:text-4xl lg:text-4xl text-center md:text-left"
+                className="font-bold bg-clip-text text-transparent text-4xl sm:text-3xl md:text-4xl lg:text-4xl text-center md:text-left"
                 style={{
                   backgroundImage:
                     "linear-gradient(3deg, rgba(236,230,242,1) 40%, rgba(0,0,0,1) 93%, rgba(0,0,0,1) 100%)",
@@ -92,7 +108,7 @@ export default function WorkMethod() {
               </div>
               <h3 className="text-lg font-semibold mb-2 text-center md:text-left">{step.title}</h3>
               <p className="text-gray-600 text-sm leading-relaxed text-center md:text-left">{step.desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

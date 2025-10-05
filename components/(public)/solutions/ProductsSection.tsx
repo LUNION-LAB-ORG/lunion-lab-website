@@ -6,12 +6,13 @@ import { ExternalLink } from "lucide-react";
 import HomeTitle from "../home/HomeTitle";
 import Link from "next/link";
 
-// Définition des produits avec couleur titre, couleur sur carte sélectionnée et URL
+// Définition des produits avec couleur titre, couleur sur carte sélectionnée, URL et texte détaillé
 const products = [
   {
     id: 1,
-    name: "Lunion Booking",
+    name: "Lunion-Booking",
     description: "Révolutionnez votre gestion immobilière",
+    detailText: "Gérez efficacement vos biens, réservations et clients en un seul endroit.",
     mainImage: "/assets/images/all-img/bulding.jpg",
     dashboardImage: "/assets/images/all-img/systeme.png",
     mockupImage: "/assets/images/produits/moockup.png",
@@ -25,8 +26,9 @@ const products = [
   },
   {
     id: 2,
-    name: "Lunion Educ",
-    description: "Révolutionnez votre gestion  la gestion immobilière",
+    name: "Lunion-Educ",
+    description: "Révolutionnez votre gestion la gestion immobilière",
+    detailText: "Optimisez la gestion des élèves, cours et ressources pédagogiques.",
     mainImage: "/assets/images/solution/solution_educ.png",
     dashboardImage: "/assets/images/all-img/educ_system.png",
     mockupImage: "/assets/images/produits/mockup_educ.png",
@@ -40,8 +42,9 @@ const products = [
   },
   {
     id: 3,
-    name: "Lunion Secure",
+    name: "Lunion-Secure",
     description: "Révolutionnez la gestion des ressources humaines",
+    detailText: "Assurez la sécurité des données et simplifiez la gestion des équipes.",
     mainImage: "/assets/images/solution/solution_secu.png",
     dashboardImage: "/assets/images/all-img/secu_system.png",
     mockupImage: "/assets/images/produits/mockup_secu.png",
@@ -60,9 +63,9 @@ export default function ProductsSection() {
 
   return (
     <section className="bg-white py-20">
-      <div className=" mx-auto px-6 lg:px-12">
+      <div className="mx-auto px-6 lg:px-12">
         {/* Titre de section */}
-        <div className="flex   justify-center items-center gap-3 mb-12">
+        <div className="flex justify-center items-center gap-3 mb-12">
           <h2 className="text-4xl font-bold text-purple-700">
             <HomeTitle
               text="Nos produits"
@@ -92,9 +95,7 @@ export default function ProductsSection() {
                 >
                   <ExternalLink size={18} />
                 </Link>
-                <p
-                  className={`font-semibold ${isSelected ? "text-white" : ""}`}
-                >
+                <p className={`font-semibold ${isSelected ? "text-white" : ""}`}>
                   {product.name}
                 </p>
                 <Image
@@ -124,7 +125,7 @@ export default function ProductsSection() {
 
         {/* Bloc descriptif */}
         <div>
-          <main className=" flex items-center justify-center p- md:p-12">
+          <main className="flex items-center justify-center p- md:p-12">
             <section className="max-w-[1400px] w-full grid grid-cols-12 gap-6 md:gap-8 items-stretch">
               {/* Colonne gauche (contenus) */}
               <div className="col-span-12 lg:col-span-8 flex flex-col gap-6">
@@ -158,20 +159,13 @@ export default function ProductsSection() {
                 <div className="flex-1">
                   <article className="relative bg-[#f0ad47] rounded-t-3xl rounded-br-3xl p-4 md:p-12 text-white shadow-xl h-[280px] sm:h-[300px] overflow-hidden">
                     <h3 className="text-xl sm:text-2xl md:text-2xl font-semibold leading-tight">
-                      Gérez efficacement vos biens, réservations et clients en
-                      un seul endroit.
+                      {selectedProduct.detailText}
                     </h3>
 
                     {/* Décors images en bas */}
                     <div className="absolute bottom-0 right-0 flex items-end justify-center gap-3 sm:gap-6 p-2 md:p-0">
                       {/* Image 1 */}
-                      <div
-                        className="relative lg:w-36 sm:w-24 w-28 h-28 lg:h-36 sm:h-24 
-                  bg-white/30 rounded-2xl drop-shadow-xl 
-                  translate-y-6 rotate-[-12deg] 
-                  hover:translate-y-2 hover:rotate-[-6deg] 
-                  transition-transform duration-500 ease-out"
-                      >
+                      <div className="relative lg:w-36 sm:w-24 w-28 h-28 lg:h-36 sm:h-24 bg-white/30 rounded-2xl drop-shadow-xl translate-y-6 rotate-[-12deg] hover:translate-y-2 hover:rotate-[-6deg] transition-transform duration-500 ease-out">
                         <Image
                           src="/assets/images/solution/paper_icone.png"
                           alt="Décor 1"
@@ -181,13 +175,7 @@ export default function ProductsSection() {
                       </div>
 
                       {/* Image 2 */}
-                      <div
-                        className="relative lg:w-36 sm:w-24 w-28 h-28 lg:h-36 sm:h-24 
-                  bg-white/30 rounded-2xl drop-shadow-2xl z-10
-                  translate-y-8 rotate-[-8deg] 
-                  hover:translate-y-3 hover:rotate-[-2deg] 
-                  transition-transform duration-500 ease-out"
-                      >
+                      <div className="relative lg:w-36 sm:w-24 w-28 h-28 lg:h-36 sm:h-24 bg-white/30 rounded-2xl drop-shadow-2xl z-10 translate-y-8 rotate-[-8deg] hover:translate-y-3 hover:rotate-[-2deg] transition-transform duration-500 ease-out">
                         <Image
                           src="/assets/images/solution/cubes_icone.png"
                           alt="Décor 2"
@@ -197,13 +185,7 @@ export default function ProductsSection() {
                       </div>
 
                       {/* Image 3 */}
-                      <div
-                        className="relative lg:w-36 sm:w-24 w-28 h-28 lg:h-36 sm:h-24 
-                  bg-white/30 rounded-2xl drop-shadow-xl
-                  translate-y-10 rotate-[-15deg] 
-                  hover:translate-y-4 hover:rotate-[-8deg] 
-                  transition-transform duration-500 ease-out"
-                      >
+                      <div className="relative lg:w-36 sm:w-24 w-28 h-28 lg:h-36 sm:h-24 bg-white/30 rounded-2xl drop-shadow-xl translate-y-10 rotate-[-15deg] hover:translate-y-4 hover:rotate-[-8deg] transition-transform duration-500 ease-out">
                         <Image
                           src="/assets/images/solution/agendas_icone.png"
                           alt="Décor 3"
@@ -223,7 +205,7 @@ export default function ProductsSection() {
                     src={selectedProduct.dashboardImage}
                     alt="Dashboard large"
                     fill
-                    className=" w-full h-full"
+                    className="w-full h-full"
                   />
                 </div>
               </aside>

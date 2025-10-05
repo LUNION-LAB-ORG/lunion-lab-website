@@ -6,15 +6,16 @@ import HomeTitle from '../home/HomeTitle';
 
 const Technologies = () => {
   const technologies = [
-    { id: 1, name: "iOS", image: "/assets/images/techno/apple.svg.png" },
-    { id: 2, name: "Android", image: "/assets/images/techno/android.png" },
+    { id: 1, name: "Next.js", image: "/assets/images/techno/next_logo.jpeg" },
+    { id: 2, name: "Nest.js", image: "/assets/images/techno/nest_logo.jpeg" },
     { id: 3, name: "Flutter", image: "/assets/images/techno/flutter.png" },
     { id: 4, name: "Java", image: "/assets/images/techno/java.png" },
     { id: 5, name: "React Native", image: "/assets/images/techno/reactnative.png" },
     { id: 6, name: "Python", image: "/assets/images/techno/python.jpeg" },
-    { id: 7, name: "Java", image: "/assets/images/techno/java.png" },
+
     { id: 8, name: "Swift", image: "/assets/images/techno/swift.png" },
     { id: 9, name: "PWA", image: "/assets/images/techno/pwa.png" },
+     { id: 10, name: "Node", image: "/assets/images/techno/node_logo.jpeg" },
   ];
 
   return (
