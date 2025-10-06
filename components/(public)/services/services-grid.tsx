@@ -57,6 +57,7 @@ const ServicesGrids = () => {
       once: false,
     });
   }, []);
+  const texte=(serviceName:string)=>`Bonjour nous sommes intéressés par votre service de  :${serviceName }  . Pouvez-vous nous en dire plus ? Merci !` 
 
   return (
     <section className="py-16 px-6 bg-background">
@@ -87,8 +88,8 @@ const ServicesGrids = () => {
                 </p>
 
                 <Link
-                  href={`https://wa.me/${phoneNumber}?text=Bonjour, je souhaite en savoir plus sur : ${encodeURIComponent(
-                    service.title
+                  href={`https://wa.me/${phoneNumber}?text= ${encodeURIComponent(
+                    texte(service.title)
                   )}`}
                   target="_blank"
                   className="inline-block bg-primary text-white text-sm font-medium py-2 px-4 rounded-lg transition-all duration-300 hover:scale-110 hover:bg-purple-800"
