@@ -4,7 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import HomeTitle from "./HomeTitle";
 import Section from "@/components/primitives/Section";
-import { motion } from "framer-motion";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const services = [
   { title: "Transformation Digitale", img: "/assets/images/services/service1.png" },
@@ -16,6 +18,15 @@ const services = [
 ];
 
 export default function ServicesSection() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      offset: 100,
+      easing: "ease-in-out",
+      once: false,
+    });
+  }, []);
+
   return (
     <Section className="bg-white text-white py-20 px-6">
       {/* Titre */}
@@ -33,15 +44,13 @@ export default function ServicesSection() {
         </p>
       </div>
 
-      {/* Cartes des services avec animation */}
+      {/* Cartes des services avec AOS */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {services.map((service, index) => (
-          <motion.div
+          <div
             key={index}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: index * 0.15 }}
+            data-aos="fade-up"
+            data-aos-delay={index * 150}
             className="bg-white text-gray-800 rounded-2xl shadow-md hover:shadow-xl p-6 flex flex-col items-center justify-center"
           >
             <div className="w-28 h-20 relative mb-2">
@@ -61,7 +70,7 @@ export default function ServicesSection() {
             >
               Voir plus
             </Link>
-          </motion.div>
+          </div>
         ))}
       </div>
     </Section>

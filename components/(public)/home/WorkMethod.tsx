@@ -1,8 +1,10 @@
 "use client";
 
+import React, { useEffect } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import HomeTitle from "./HomeTitle";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const steps = [
   {
@@ -27,17 +29,16 @@ const steps = [
   },
 ];
 
-// Animation constante (flottement vertical)
-const floatAnimation = {
-  y: [0, -10, 0, 10, 0], // mouvement vertical
-  transition: {
-    duration: 4, // durée totale de l’animation
-    repeat: Infinity, // répétition infinie
-    ease: "easeInOut",
-  },
-};
-
 export default function WorkMethod() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      offset: 100,
+      easing: "ease-in-out",
+      once: false,
+    });
+  }, []);
+
   return (
     <div className="bg-white py-2 px-6 relative overflow-hidden">
       {/* Titre */}
@@ -59,9 +60,10 @@ export default function WorkMethod() {
         {/* Colonne gauche */}
         <div className="flex flex-col gap-6">
           {steps.slice(0, 2).map((step, i) => (
-            <motion.div
+            <div
               key={i}
-              animate={floatAnimation}
+              data-aos="fade-up"
+              data-aos-delay={i * 150}
               className="bg-gray-100 rounded-xl p-6 shadow-sm"
             >
               <div
@@ -75,7 +77,7 @@ export default function WorkMethod() {
               </div>
               <h3 className="text-lg font-semibold mb-2 text-center md:text-left">{step.title}</h3>
               <p className="text-gray-600 text-sm leading-relaxed text-center md:text-left">{step.desc}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
 
@@ -92,9 +94,10 @@ export default function WorkMethod() {
         {/* Colonne droite */}
         <div className="flex flex-col gap-6">
           {steps.slice(2, 4).map((step, i) => (
-            <motion.div
+            <div
               key={i}
-              animate={floatAnimation}
+              data-aos="fade-up"
+              data-aos-delay={i * 150}
               className="bg-gray-100 rounded-xl mb-4 p-6 shadow-sm"
             >
               <div
@@ -108,7 +111,7 @@ export default function WorkMethod() {
               </div>
               <h3 className="text-lg font-semibold mb-2 text-center md:text-left">{step.title}</h3>
               <p className="text-gray-600 text-sm leading-relaxed text-center md:text-left">{step.desc}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

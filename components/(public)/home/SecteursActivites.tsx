@@ -1,9 +1,20 @@
-import React from "react";
+
+'use client'
+import React, { useEffect } from "react";
 import { SectorCard } from "./SectorCard";
 import HomeTitle from "./HomeTitle";
 import Section from "@/components/primitives/Section";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 export default function SecteursActivites() {
+   useEffect(() => {
+    AOS.init({
+      duration: 800,
+      offset: 100,
+      easing: "ease-in-out",
+      once: false,
+    });
+  }, []);
   const sectors = [
     {
       title: "Secteur Public",
@@ -11,6 +22,7 @@ export default function SecteursActivites() {
         "Moderniser ses processus, améliorer la prestation des services et renforcer la sécurité des données.",
       image: "/assets/images/secteurs/secteur1.png",
       bgGradient: "bg-gradient-to-br from-blue-600 to-purple-700",
+       aos: "fade-up",
     },
     {
       title: "Secteur Industriel",
