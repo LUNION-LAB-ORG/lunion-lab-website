@@ -1,8 +1,11 @@
-'use client'
-import React, { useState } from 'react';
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import HomeTitle from './HomeTitle';
 import Section from '@/components/primitives/Section';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 // TeamMember Component
 interface TeamMemberProps {
@@ -18,7 +21,11 @@ const TeamMember: React.FC<TeamMemberProps> = ({
   imageSrc,
   isFounder = false,
 }) => (
-  <div className="flex flex-col items-center text-center space-y-3">
+  <div 
+    className="flex flex-col items-center text-center space-y-3"
+    data-aos="fade-up"
+    data-aos-delay={isFounder ? 200 : 100}
+  >
     <div className={`relative ${isFounder ? 'w-20 h-20' : 'w-16 h-16'}`}>
       <Image
         src={imageSrc || "/api/placeholder/64/64"}
@@ -42,106 +49,44 @@ const TeamMember: React.FC<TeamMemberProps> = ({
 const DreamTeamTabs = () => {
   const [activeTab, setActiveTab] = useState('doyens');
 
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      offset: 100,
+      easing: 'ease-in-out',
+      once: false,
+    });
+  }, []);
+
   const responsables = [
-    {
-      name: "M.Cédric Assah",
-      role: "Le Commandant de bord",
-      imageSrc: "/assets/images/membres/membre1.jpg"
-    },
-    {
-      name: "M.Anderson Kouadio",
-      role: "Le Couteau-suisse du code",
-      imageSrc: "/assets/images/membres/membre2.jpg"
-    },
-    {
-      name: "M.Yannick DeVinci",
-      role: "Le Penseur de l'interface",
-      imageSrc: "/assets/images/membres/membre3.jpg"
-    }
+    { name: "M.Cédric Assah", role: "Le Commandant de bord", imageSrc: "/assets/images/membres/membre1.jpg" },
+    { name: "M.Anderson Kouadio", role: "Le Couteau-suisse du code", imageSrc: "/assets/images/membres/membre2.jpg" },
+    { name: "M.Yannick DeVinci", role: "Le Penseur de l'interface", imageSrc: "/assets/images/membres/membre3.jpg" }
   ];
 
   const founders = [
-    
-    {
-      name: "M.Francis Kouakou",
-      role: "Responsable IT",
-      imageSrc: "/assets/images/membres/membre1.jpg",
-      
-    },
-    {
-      name: "M.Alain SIA",
-      role: "Le Tisseur de liens et Le Chasseur d'affaires",
-      imageSrc: "/assets/images/membres/membre1.jpg",
-      
-    },
+    { name: "M.Francis Kouakou", role: "Responsable IT", imageSrc: "/assets/images/membres/membre1.jpg" },
+    { name: "M.Alain SIA", role: "Le Tisseur de liens et Le Chasseur d'affaires", imageSrc: "/assets/images/membres/membre1.jpg" },
   ];
 
   const itTeam = [
-    {
-      name: "M.Francis Kouakou",
-      role: "Responsable IT",
-      imageSrc: "/assets/images/membres/membre1.jpg",
-    },
-    {
-      name: "M.Yamoussa Keita",
-      role: "Développeur Full-Stack",
-      imageSrc: "/assets/images/membres/membre1.jpg",
-    },
-   
-    {
-      name: "Axel Kouakou",
-      role: "L'architecte de applications web",
-      imageSrc: "/assets/images/membres/membre3.jpg",
-    }
-    ,{
-      name: "Oriest Djelloh",
-      role: "L'architecte des applis mobiles",
-      imageSrc: "/assets/images/membres/membre3.jpg",
-    },
-    { 
-      name: "Félix Kouadio",
-      role: "L'architecte des applis web",
-      imageSrc: "/assets/images/membres/membre3.jpg",
-    },
-    {
-      name: "Issa Coulibaly",
-      role: "L'architecte des applis web",
-      imageSrc: "/assets/images/membres/membre1.jpg",
-    }
+    { name: "M.Francis Kouakou", role: "Responsable IT", imageSrc: "/assets/images/membres/membre1.jpg" },
+    { name: "M.Yamoussa Keita", role: "Développeur Full-Stack", imageSrc: "/assets/images/membres/membre1.jpg" },
+    { name: "Axel Kouakou", role: "L'architecte de applications web", imageSrc: "/assets/images/membres/membre3.jpg" },
+    { name: "Oriest Djelloh", role: "L'architecte des applis mobiles", imageSrc: "/assets/images/membres/membre3.jpg" },
+    { name: "Félix Kouadio", role: "L'architecte des applis web", imageSrc: "/assets/images/membres/membre3.jpg" },
+    { name: "Issa Coulibaly", role: "L'architecte des applis web", imageSrc: "/assets/images/membres/membre1.jpg" }
   ];
 
   const commerciaux = [
-   
-    {
-      name: "M.Stéphane",
-      role: "Tisseur de liens",
-      imageSrc: "/assets/images/membres/membre2.jpg",
-    },
-     {
-      name: "M.Alain SIA",
-      role: "Le Tisseur de liens et Le Chasseur d'affaires",
-      imageSrc: "/assets/images/membres/membre1.jpg",
-      isFounder: true
-    },
-    {
-      name: "Mme Fatem Coulibaly",
-      role: "Founder & CEO",
-      imageSrc: "/assets/images/membres/membre4.png",
-      isFounder: true
-    }
+    { name: "M.Stéphane", role: "Tisseur de liens", imageSrc: "/assets/images/membres/membre2.jpg" },
+    { name: "M.Alain SIA", role: "Le Tisseur de liens et Le Chasseur d'affaires", imageSrc: "/assets/images/membres/membre1.jpg", isFounder: true },
+    { name: "Mme Fatem Coulibaly", role: "Founder & CEO", imageSrc: "/assets/images/membres/membre4.png", isFounder: true }
   ];
 
   const designers = [
-    {
-      name: "M.Pascal",
-      role: "Maître du visuel",
-      imageSrc: "/assets/images/membres/membre3.jpg",
-    },
-    {
-      name: "M.Hassane Boko",
-      role: "L'artiste",
-      imageSrc: "/assets/images/membres/membre3.jpg",
-    }
+    { name: "M.Pascal", role: "Maître du visuel", imageSrc: "/assets/images/membres/membre3.jpg" },
+    { name: "M.Hassane Boko", role: "L'artiste", imageSrc: "/assets/images/membres/membre3.jpg" }
   ];
 
   const tabs = [
@@ -153,31 +98,26 @@ const DreamTeamTabs = () => {
 
   const getCurrentTeamMembers = () => {
     switch (activeTab) {
-      case 'doyens':
-        return [...responsables, ...founders];
-      case 'it':
-        return itTeam;
-      case 'designers':
-        return designers;
-      case 'commerciaux':
-        return commerciaux;
-      default:
-        return responsables;
+      case 'doyens': return [...responsables, ...founders];
+      case 'it': return itTeam;
+      case 'designers': return designers;
+      case 'commerciaux': return commerciaux;
+      default: return responsables;
     }
   };
 
   return (
     <Section className="max-w-7xl mx-auto p-8 bg-gray-50">
       {/* Header */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-12" data-aos="fade-down">
         <div className="text-4xl md:text-6xl font-bold text-purple-400 mb-2">
-         <HomeTitle text='La Dream Team' imageSrc='/assets/images/all-img/team_icone.png' />
+          <HomeTitle text='La Dream Team' imageSrc='/assets/images/all-img/team_icone.png' />
         </div>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-12 items-start">
         {/* Left Side - Tabs and Description */}
-        <div className="bg-[#242424] rounded-3xl p-8 text-white">
+        <div className="bg-[#242424] rounded-3xl p-8 text-white" data-aos="fade-right">
           <p className="text-base leading-relaxed mb-8">
             Une équipe de professionnels passionnés, chacun apportant des compétences et des expériences uniques pour stimuler l&apos;innovation et l&apos;excellence dans chaque projet que nous entreprenons.
           </p>
@@ -188,11 +128,11 @@ const DreamTeamTabs = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`p-4  transition-all cursor-pointer rounded-full duration-300 text-left  ${
-                  activeTab === tab.id ? tab.color  : 'bg-[#616369]'
+                className={`p-4 transition-all cursor-pointer rounded-full duration-300 text-left  ${
+                  activeTab === tab.id ? tab.color : 'bg-[#616369]'
                 } hover:opacity-80 `}
               >
-                <div className="flex flex-col items-center  text-center">
+                <div className="flex flex-col items-center text-center">
                   <div className="text-2xl mb-2">👥</div>
                   <span className="text-sm font-medium">{tab.label}</span>
                 </div>
@@ -202,12 +142,10 @@ const DreamTeamTabs = () => {
         </div>
 
         {/* Right Side - Team Members */}
-        <div className="bg- rounded-3xl p-8">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {getCurrentTeamMembers().map((member, index) => (
-              <TeamMember key={index} {...member} />
-            ))}
-          </div>
+        <div className="bg- rounded-3xl p-8 grid grid-cols-2 md:grid-cols-3 gap-6">
+          {getCurrentTeamMembers().map((member, index) => (
+            <TeamMember key={index} {...member} />
+          ))}
         </div>
       </div>
     </Section>
