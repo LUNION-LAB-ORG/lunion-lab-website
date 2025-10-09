@@ -5,7 +5,7 @@ import { Metadata, Viewport } from "next";
 import { ThemeProviders } from "@/providers/theme.provider";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 
-import { fontFigtree, fontSans } from "@/config/fonts"; // import de fontS dans module scope
+import { fontSans } from "@/config/fonts"; // import de fontS dans module scope
 import { Figtree } from "next/font/google"; // font Google dans module scope
 import { siteConfig } from "@/config/site";
 import AuthProvider from "@/providers/auth.provider";
@@ -19,6 +19,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { getLangDir } from "rtl-detect";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 // Charger Figtree dans le module scope
 const figtreeFont = Figtree({ variable: "--font-figtree", subsets: ["latin"] });
@@ -66,14 +67,23 @@ export default async function RootLayout({
           figtreeFont.variable
         )}
       >
+        <GoogleAnalytics gaId="G-JD1Q4M38TD" />
+
         <NextIntlClientProvider messages={messages} locale={locale}>
           <QueryProvider>
-            <ThemeProviders themeProps={{ attribute: "class", defaultTheme: "light" }}>
-              <ToastProvider placement="top-center" toastProps={{ shouldShowTimeoutProgress: true }} />
+            <ThemeProviders
+              themeProps={{ attribute: "class", defaultTheme: "light" }}
+            >
+              <ToastProvider
+                placement="top-center"
+                toastProps={{ shouldShowTimeoutProgress: true }}
+              />
               <NuqsAdapter>
                 <AuthProvider>
                   <MountedProvider>
-                    <DirectionProvider direction={direction}>{children}</DirectionProvider>
+                    <DirectionProvider direction={direction}>
+                      {children}
+                    </DirectionProvider>
                   </MountedProvider>
                 </AuthProvider>
               </NuqsAdapter>
