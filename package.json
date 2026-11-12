@@ -46,6 +46,7 @@
     "ak-api-http": "^1.0.3",
     "ak-zod-form-kit": "^1.0.5",
     "aos": "^2.3.4",
+    "axios": "^1.21.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "2.1.1",
     "cobe": "0.6.3",
