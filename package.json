@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "bun run --bun next dev",
-    "build": "next build",
+   "build": "next build --webpack",
     "start": "next start",
     "lint:fix": "bun run --bun eslint . --fix",
     "type-check": "bun tsc --noEmit",
