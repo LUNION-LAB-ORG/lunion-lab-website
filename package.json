@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "bun run --bun next dev",
-    "build": "bun run --bun next build",
-    "start": "bun run --bun next start",
-    "lint": "bun run --bun eslint .",
+    "build": "next build",
+    "start": "next start""lint": "bun run --bun eslint .",
     "lint:fix": "bun run --bun eslint . --fix",
     "type-check": "bun tsc --noEmit",
     "build:analyze": "ANALYZE=true bun run --bun next build",
