@@ -1,8 +1,7 @@
+import BlogCards from "@/components/(public)/blog/blog-cards";
 import Content from "@/components/primitives/Content";
 import Section from "@/components/primitives/Section";
-import Subtitle from "@/components/primitives/Subtitle";
 import Title from "@/components/primitives/Title";
-import { Button, Card } from "@heroui/react";
 import { getTranslations } from "next-intl/server";
 
 export default async function BlogPage() {
@@ -11,32 +10,7 @@ export default async function BlogPage() {
   return (
     <Content>
       <Title>{t("title")}</Title>
-      <Section className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <Card>
-          <Card.Header className="flex-col justify-start align-start">
-            <Title size="sm">Card Title</Title>
-            <Subtitle size="sm">Card Description</Subtitle>
-          </Card.Header>
-          <Card.Content>
-            <p>Card Text</p>
-          </Card.Content>
-          <Card.Footer>
-            <Button>Card Button</Button>
-          </Card.Footer>
-        </Card>
-        <Card>
-          <Card.Header className="flex flex-col justify-start">
-            <Title size="sm">Card Title</Title>
-            <Subtitle size="sm">Card Description</Subtitle>
-          </Card.Header>
-          <Card.Content>
-            <p>Card Text</p>
-          </Card.Content>
-          <Card.Footer>
-            <Button>Card Button</Button>
-          </Card.Footer>
-        </Card>
-      </Section>
+      <BlogCards />
       <svg
         width="100%"
         height="auto"

@@ -1,5 +1,4 @@
 import "@/styles/globals.css";
-import { Toast } from "@heroui/react";
 import { Metadata, Viewport } from "next";
 
 import { ThemeProviders } from "@/providers/theme.provider";
@@ -9,6 +8,7 @@ import { fontSans } from "@/config/fonts"; // import de fontS dans module scope
 import { siteConfig } from "@/config/site";
 import AuthProvider from "@/providers/auth.provider";
 import QueryProvider from "@/providers/query-provider";
+import ToastProvider from "@/providers/toast.provider";
 import { Figtree } from "next/font/google"; // font Google dans module scope
 
 import { routing } from "@/i18n/routing";
@@ -82,7 +82,7 @@ export default async function RootLayout({
             <ThemeProviders
               themeProps={{ attribute: "class", defaultTheme: "light" }}
             >
-              <Toast.Provider placement="top" />
+              <ToastProvider placement="top" />
               <NuqsAdapter>
                 <AuthProvider>
                   {/* <MountedProvider> */}
