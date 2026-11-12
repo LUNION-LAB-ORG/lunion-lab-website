@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "bun run --bun next dev",
     "build": "next build",
-    "start": "next start""lint": "bun run --bun eslint .",
+    "start": "next start",
     "lint:fix": "bun run --bun eslint . --fix",
     "type-check": "bun tsc --noEmit",
     "build:analyze": "ANALYZE=true bun run --bun next build",
